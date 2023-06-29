@@ -17,8 +17,8 @@
 	<description>This project complements the DL-model runner acting as the engine that works loading models 
 	and making inference with Java 0.3.0 and newer API for Tensorflow 2.
 	</description>
-	<url>https://github.com/bioimage-io/tensorflow-2-java-interface</url>
-	<inceptionYear>2022</inceptionYear>
+	<url>https://github.com/bioimage-io/tensorflow-2-java-interface-0.5.0</url>
+	<inceptionYear>2023</inceptionYear>
 	<organization>
 		<name>BioImage.io</name>
 		<url>https://bioimage.io/</url>
@@ -103,21 +103,21 @@
 	</mailingLists>
 
 	<scm>
-		<connection>scm:git:https://github.com/bioimage-io/tensorflow-2-java-interface</connection>
-		<developerConnection>scm:git:git@github.com:bioimage-io/tensorflow-2-java-interface</developerConnection>
+		<connection>scm:git:https://github.com/bioimage-io/tensorflow-2-java-interface-0.5.0</connection>
+		<developerConnection>scm:git:git@github.com:bioimage-io/tensorflow-2-java-interface-0.5.0</developerConnection>
 		<tag>HEAD</tag>
-		<url>https://github.com/bioimage-io/tensorflow-2-java-interface</url>
+		<url>https://github.com/bioimage-io/tensorflow-2-java-interface-0.5.0</url>
 	</scm>
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/bioimage-io/tensorflow-2-java-interface/issues</url>
+		<url>https://github.com/bioimage-io/tensorflow-2-java-interface-0.5.0/issues</url>
 	</issueManagement>
 	<ciManagement>
 		<system>None</system>
 	</ciManagement>
 
 	<properties>
-		<package-name>io.bioimage.modelrunner.tensorflow.v2.api030</package-name>
+		<package-name>io.bioimage.modelrunner.tensorflow.v2.api050</package-name>
 
 		<license.licenseName>apache_v2</license.licenseName>
 		<license.copyrightOwners>Institut Pasteur and BioImage.IO developers.</license.copyrightOwners>
@@ -125,7 +125,7 @@
 		<!-- NB: Deploy releases to the SciJava Maven repository. -->
 		<releaseProfiles>sign,deploy-to-scijava</releaseProfiles>
 
-		<dl-modelrunner.version>0.3.0</dl-modelrunner.version>
+		<dl-modelrunner.version>0.3.10</dl-modelrunner.version>
 		<tensorflow-core.version>0.5.0</tensorflow-core.version>
 	</properties>
 
