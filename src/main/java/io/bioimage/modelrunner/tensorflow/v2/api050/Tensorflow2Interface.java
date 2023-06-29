@@ -18,7 +18,7 @@
  * limitations under the License.
  * #L%
  */
-package io.bioimage.modelrunner.tensorflow.v2.api030;
+package io.bioimage.modelrunner.tensorflow.v2.api050;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -27,10 +27,10 @@ import io.bioimage.modelrunner.exceptions.LoadModelException;
 import io.bioimage.modelrunner.exceptions.RunModelException;
 import io.bioimage.modelrunner.system.PlatformDetection;
 import io.bioimage.modelrunner.tensor.Tensor;
-import io.bioimage.modelrunner.tensorflow.v2.api030.tensor.ImgLib2Builder;
-import io.bioimage.modelrunner.tensorflow.v2.api030.tensor.TensorBuilder;
-import io.bioimage.modelrunner.tensorflow.v2.api030.tensor.mappedbuffer.ImgLib2ToMappedBuffer;
-import io.bioimage.modelrunner.tensorflow.v2.api030.tensor.mappedbuffer.MappedBufferToImgLib2;
+import io.bioimage.modelrunner.tensorflow.v2.api050.tensor.ImgLib2Builder;
+import io.bioimage.modelrunner.tensorflow.v2.api050.tensor.TensorBuilder;
+import io.bioimage.modelrunner.tensorflow.v2.api050.tensor.mappedbuffer.ImgLib2ToMappedBuffer;
+import io.bioimage.modelrunner.tensorflow.v2.api050.tensor.mappedbuffer.MappedBufferToImgLib2;
 import net.imglib2.type.NativeType;
 import net.imglib2.type.numeric.RealType;
 
@@ -58,6 +58,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.tensorflow.Result;
 import org.tensorflow.SavedModelBundle;
 import org.tensorflow.Session;
 import org.tensorflow.proto.framework.MetaGraphDef;
@@ -262,17 +263,18 @@ public class Tensorflow2Interface implements DeepLearningEngineInterface {
 		for (Tensor tt : outputTensors)
 			runner = runner.fetch(getModelOutputName(tt.getName()));
 		// Run runner
-		List<org.tensorflow.Tensor> resultPatchTensors = runner.run();
+		Result resultPatchTensors = runner.run();
 
 		// Fill the agnostic output tensors list with data from the inference result
-		fillOutputTensors(resultPatchTensors, outputTensors);
+		//fillOutputTensors(resultPatchTensors, outputTensors);
 		// Close the remaining resources
 		session.close();
 		for (TType tt : inTensors) {
 			tt.close();
 		}
-		for (org.tensorflow.Tensor tt : resultPatchTensors) {
-			tt.close();
+		
+		for (int i = 0; 0 < resultPatchTensors.size(); i ++) {
+			resultPatchTensors.get(i).close();
 		}
 	}
 	

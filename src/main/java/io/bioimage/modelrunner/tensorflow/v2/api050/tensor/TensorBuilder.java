@@ -19,7 +19,7 @@
  * #L%
  */
 
-package io.bioimage.modelrunner.tensorflow.v2.api030.tensor;
+package io.bioimage.modelrunner.tensorflow.v2.api050.tensor;
 
 import io.bioimage.modelrunner.utils.IndexingUtils;
 

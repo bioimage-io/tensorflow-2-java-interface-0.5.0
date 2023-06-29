@@ -18,7 +18,7 @@
  * limitations under the License.
  * #L%
  */
-package io.bioimage.modelrunner.tensorflow.v2.api030.tensor.mappedbuffer;
+package io.bioimage.modelrunner.tensorflow.v2.api050.tensor.mappedbuffer;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
