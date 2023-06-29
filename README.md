@@ -1,6 +1,6 @@
-[![Build Status](https://github.com/bioimage-io/tensorflow-2-java-interface/actions/workflows/build.yml/badge.svg)](https://github.com/bioimage-io/tensorflow-2-java-interface/actions/workflows/build.yml)
+[![Build Status](https://github.com/bioimage-io/tensorflow-2-java-interface-0.5.0/actions/workflows/build.yml/badge.svg)](https://github.com/bioimage-io/tensorflow-2-java-interface-0.5.0/actions/workflows/build.yml)
 
-# dl-modelrunner-java: tensorflow-2b
+# dl-modelrunner-java: tensorflow-2c
 
 [JAR file](https://maven.scijava.org/service/local/artifact/maven/redirect?r=releases&g=io.bioimage&a=dl-modelrunner-tensorflow-2b&v=0.1.0&e=jar)
 
@@ -10,7 +10,7 @@ To use with maven:
 ```
 <dependency>
   <groupId>io.bioimage</groupId>
-  <artifactId>dl-modelrunner-tensorflow-2b</artifactId>
+  <artifactId>dl-modelrunner-tensorflow-2c</artifactId>
   <version>0.3.0</version>
 </dependency>
 ```
