@@ -13,9 +13,9 @@
 	<artifactId>dl-modelrunner-tensorflow-2c</artifactId>
 	<version>0.2.9-SNAPSHOT</version>
 
-	<name>TensorFlow 2 Java API 0.3.0 engine for DL-model-runner</name>
+	<name>TensorFlow 2 Java API 0.5.0 engine for DL-model-runner</name>
 	<description>This project complements the DL-model runner acting as the engine that works loading models 
-	and making inference with Java 0.3.0 and newer API for Tensorflow 2.
+	and making inference with Java 0.5.0 and newer API for Tensorflow 2.
 	</description>
 	<url>https://github.com/bioimage-io/tensorflow-2-java-interface-0.5.0</url>
 	<inceptionYear>2023</inceptionYear>
