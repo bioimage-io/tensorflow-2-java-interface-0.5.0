@@ -169,6 +169,10 @@ public class Tensorflow2Interface implements DeepLearningEngineInterface {
      * HashMap that maps tensor to the temporal file name for interprocessing
      */
     private HashMap<String, String> tensorFilenameMap;
+    /**
+     * Process where the model is being loaded and executed
+     */
+    Process process;
     
     /**
      * TODO the interprocessing is executed for every OS
@@ -274,7 +278,7 @@ public class Tensorflow2Interface implements DeepLearningEngineInterface {
 			tt.close();
 		}
 		
-		for (int i = 0; 0 < resultPatchTensors.size(); i ++) {
+		for (int i = 0; i < resultPatchTensors.size(); i ++) {
 			resultPatchTensors.get(i).close();
 		}
 	}
@@ -297,7 +301,7 @@ public class Tensorflow2Interface implements DeepLearningEngineInterface {
 			for (Tensor tensor : inputTensors) {args.add(getFilename4Tensor(tensor.getName()) + INPUT_FILE_TERMINATION);}
 			for (Tensor tensor : outputTensors) {args.add(getFilename4Tensor(tensor.getName()) + OUTPUT_FILE_TERMINATION);}
 			ProcessBuilder builder = new ProcessBuilder(args);
-	        Process process = builder.start();
+	        process = builder.start();
 	        int result = process.waitFor();
 	        process.destroy();
 	        if (result != 0)
@@ -358,6 +362,8 @@ public class Tensorflow2Interface implements DeepLearningEngineInterface {
 				ff.delete();
 		}
 		listTempFiles = null;
+		if (process != null)
+			process.destroyForcibly();
 	}
 
 	// TODO make only one
