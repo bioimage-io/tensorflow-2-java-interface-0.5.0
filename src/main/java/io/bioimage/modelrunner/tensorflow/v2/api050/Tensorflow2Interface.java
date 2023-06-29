@@ -69,8 +69,9 @@ import org.tensorflow.types.family.TType;
 /**
  * Class to that communicates with the dl-model runner, see 
  * @see <a href="https://github.com/bioimage-io/model-runner-java">dlmodelrunner</a>
- * to execute Tensorflow 2 models. This class is compatible with every TF2 Java API
- * but the 0.2.0 version
+ * to execute Tensorflow 2 models. This class is compatible with 
+ * the TF2 Java API 0.5.0
+ * 
  * This class implements the interface {@link DeepLearningEngineInterface} to get the 
  * agnostic {@link io.bioimage.modelrunner.tensor.Tensor}, convert them into 
  * {@link org.tensorflow.Tensor}, execute a Tensorflow 2 Deep Learning model on them and
@@ -81,7 +82,7 @@ import org.tensorflow.types.family.TType;
  *  of {@link io.bioimage.modelrunner.tensor.Tensor} from {@link org.tensorflow.Tensor}
  * {@link TensorBuilder}. Converts {@link io.bioimage.modelrunner.tensor.Tensor} into {@link org.tensorflow.Tensor}
  * 
- * @author Carlos Garcia Lopez de Haro and Daniel Felipe Gonzalez Obando
+ * @author Carlos Garcia Lopez de Haro
  */
 public class Tensorflow2Interface implements DeepLearningEngineInterface {
 
@@ -266,7 +267,7 @@ public class Tensorflow2Interface implements DeepLearningEngineInterface {
 		Result resultPatchTensors = runner.run();
 
 		// Fill the agnostic output tensors list with data from the inference result
-		//fillOutputTensors(resultPatchTensors, outputTensors);
+		fillOutputTensors(resultPatchTensors, outputTensors);
 		// Close the remaining resources
 		session.close();
 		for (TType tt : inTensors) {
@@ -324,7 +325,7 @@ public class Tensorflow2Interface implements DeepLearningEngineInterface {
 	 *           as the number of Tensors outputed by the model
 	 */
 	public static void fillOutputTensors(
-			List<org.tensorflow.Tensor> outputTfTensors, List<Tensor<?>> outputTensors)
+			Result outputTfTensors, List<Tensor<?>> outputTensors)
 			throws RunModelException
 		{
 			if (outputTfTensors.size() != outputTensors.size())
