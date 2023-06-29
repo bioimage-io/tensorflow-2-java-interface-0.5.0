@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>34.1.0</version>
+		<version>35.1.1</version>
 		<relativePath />
 	</parent>
 
 	<groupId>io.bioimage</groupId>
 	<artifactId>dl-modelrunner-tensorflow-2c</artifactId>
-	<version>0.3.1-SNAPSHOT</version>
+	<version>0.2.9-SNAPSHOT</version>
 
 	<name>TensorFlow 2 Java API 0.3.0 engine for DL-model-runner</name>
 	<description>This project complements the DL-model runner acting as the engine that works loading models 
