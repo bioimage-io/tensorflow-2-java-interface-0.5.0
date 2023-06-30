@@ -130,6 +130,7 @@
 		<scijava.jvm.build.version>[11,)</scijava.jvm.build.version>
         <scijava.jvm.version>11</scijava.jvm.version>
 		<source>8</source>
+		<maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
 	</properties>
 
 	<repositories>
