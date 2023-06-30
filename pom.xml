@@ -105,7 +105,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/bioimage-io/tensorflow-2-java-interface-0.5.0</connection>
 		<developerConnection>scm:git:git@github.com:bioimage-io/tensorflow-2-java-interface-0.5.0</developerConnection>
-		<tag>HEAD</tag>
+		<tag>dl-modelrunner-tensorflow-2c-0.3.0</tag>
 		<url>https://github.com/bioimage-io/tensorflow-2-java-interface-0.5.0</url>
 	</scm>
 	<issueManagement>
@@ -127,8 +127,8 @@
 
 		<dl-modelrunner.version>0.3.10</dl-modelrunner.version>
 		<tensorflow-core.version>0.5.0</tensorflow-core.version>
-		<scijava.jvm.build.version>[17,)</scijava.jvm.build.version>
-        <scijava.jvm.version>17</scijava.jvm.version>
+		<scijava.jvm.build.version>[11,)</scijava.jvm.build.version>
+        <scijava.jvm.version>11</scijava.jvm.version>
 	</properties>
 
 	<repositories>
