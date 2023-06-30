@@ -11,7 +11,7 @@
 
 	<groupId>io.bioimage</groupId>
 	<artifactId>dl-modelrunner-tensorflow-2c</artifactId>
-	<version>0.3.1-SNAPSHOT</version>
+	<version>0.2.9-SNAPSHOT</version>
 
 	<name>TensorFlow 2 Java API 0.5.0 engine for DL-model-runner</name>
 	<description>This project complements the DL-model runner acting as the engine that works loading models 
@@ -129,19 +129,8 @@
 		<tensorflow-core.version>0.5.0</tensorflow-core.version>
 		<scijava.jvm.build.version>[11,)</scijava.jvm.build.version>
         <scijava.jvm.version>11</scijava.jvm.version>
+		<source>8</source>
 	</properties>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>3.4.1</version>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
-        </plugin>
-		</plugins>
-	</build>
 
 	<repositories>
 		<repository>
