@@ -2,7 +2,7 @@
 
 # dl-modelrunner-java: tensorflow-2c
 
-[JAR file](https://maven.scijava.org/service/local/artifact/maven/redirect?r=releases&g=io.bioimage&a=dl-modelrunner-tensorflow-2b&v=0.1.0&e=jar)
+[JAR file](https://maven.scijava.org/service/local/repositories/releases/content/io/bioimage/dl-modelrunner-tensorflow-2c/0.3.3/dl-modelrunner-tensorflow-2c-0.3.3.jar)
 
 
 To use with maven:
@@ -11,7 +11,7 @@ To use with maven:
 <dependency>
   <groupId>io.bioimage</groupId>
   <artifactId>dl-modelrunner-tensorflow-2c</artifactId>
-  <version>0.3.0</version>
+  <version>0.3.2</version>
 </dependency>
 ```
 
