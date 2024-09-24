@@ -19,7 +19,7 @@
  * #L%
  */
 
-package io.bioimage.modelrunner.tensorflow.v2.api030.shm;
+package io.bioimage.modelrunner.tensorflow.v2.api050.shm;
 
 import io.bioimage.modelrunner.tensor.shm.SharedMemoryArray;
 import io.bioimage.modelrunner.utils.CommonUtils;

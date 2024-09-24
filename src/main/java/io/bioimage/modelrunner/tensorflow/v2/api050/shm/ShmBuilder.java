@@ -18,7 +18,7 @@
  * limitations under the License.
  * #L%
  */
-package io.bioimage.modelrunner.tensorflow.v2.api030.shm;
+package io.bioimage.modelrunner.tensorflow.v2.api050.shm;
 
 import io.bioimage.modelrunner.system.PlatformDetection;
 import io.bioimage.modelrunner.tensor.shm.SharedMemoryArray;
