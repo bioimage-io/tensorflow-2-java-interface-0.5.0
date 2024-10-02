@@ -118,9 +118,7 @@ public final class TensorBuilder {
 			throw new IllegalArgumentException("Shared memory arrays must be saved in numpy format.");
 		ByteBuffer buff = tensor.getDataBufferNoHeader();
 		IntBuffer intBuff = buff.asIntBuffer();
-		int[] intArray = new int[intBuff.capacity()];
-		intBuff.get(intArray);
-		IntDataBuffer dataBuffer = RawDataBufferFactory.create(intArray, false);
+		IntDataBuffer dataBuffer = RawDataBufferFactory.create(intBuff.array(), false);
 		TInt32 ndarray = TInt32.tensorOf(Shape.of(ogShape),
 			dataBuffer);
 		return ndarray;
@@ -137,9 +135,7 @@ public final class TensorBuilder {
 			throw new IllegalArgumentException("Shared memory arrays must be saved in numpy format.");
 		ByteBuffer buff = tensor.getDataBufferNoHeader();
 		LongBuffer longBuff = buff.asLongBuffer();
-		long[] longArray = new long[longBuff.capacity()];
-		longBuff.get(longArray);
-		LongDataBuffer dataBuffer = RawDataBufferFactory.create(longArray, false);
+		LongDataBuffer dataBuffer = RawDataBufferFactory.create(longBuff.array(), false);
 		TInt64 ndarray = TInt64.tensorOf(Shape.of(ogShape),
 			dataBuffer);
 		return ndarray;
@@ -156,9 +152,7 @@ public final class TensorBuilder {
 			throw new IllegalArgumentException("Shared memory arrays must be saved in numpy format.");
 		ByteBuffer buff = tensor.getDataBufferNoHeader();
 		FloatBuffer floatBuff = buff.asFloatBuffer();
-		float[] floatArray = new float[floatBuff.capacity()];
-		floatBuff.get(floatArray);
-		FloatDataBuffer dataBuffer = RawDataBufferFactory.create(floatArray, false);
+		FloatDataBuffer dataBuffer = RawDataBufferFactory.create(floatBuff.array(), false);
 		TFloat32 ndarray = TFloat32.tensorOf(Shape.of(ogShape), dataBuffer);
 		return ndarray;
 	}
@@ -173,10 +167,8 @@ public final class TensorBuilder {
 		if (!tensor.isNumpyFormat())
 			throw new IllegalArgumentException("Shared memory arrays must be saved in numpy format.");
 		ByteBuffer buff = tensor.getDataBufferNoHeader();
-		DoubleBuffer doubleBuff = buff.asDoubleBuffer();
-		double[] doubleArray = new double[doubleBuff.capacity()];
-		doubleBuff.get(doubleArray);
-		DoubleDataBuffer dataBuffer = RawDataBufferFactory.create(doubleArray, false);
+		DoubleBuffer floatBuff = buff.asDoubleBuffer();
+		DoubleDataBuffer dataBuffer = RawDataBufferFactory.create(floatBuff.array(), false);
 		TFloat64 ndarray = TFloat64.tensorOf(Shape.of(ogShape), dataBuffer);
 		return ndarray;
 	}
