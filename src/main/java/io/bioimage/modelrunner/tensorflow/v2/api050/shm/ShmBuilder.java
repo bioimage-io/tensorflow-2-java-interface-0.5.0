@@ -101,7 +101,10 @@ public final class ShmBuilder
 					+ " is too big. Max number of elements per ubyte output tensor supported: " + Integer.MAX_VALUE / 1);
         SharedMemoryArray shma = SharedMemoryArray.readOrCreate(memoryName, arrayShape, new UnsignedByteType(), false, true);
         ByteBuffer buff = shma.getDataBufferNoHeader();
-        tensor.asRawTensor().data().read(buff.array(), 0, buff.capacity());
+        byte[] flat = new byte[buff.capacity()];
+        ByteBuffer buff2 = ByteBuffer.wrap(flat);
+        tensor.asRawTensor().data().read(flat, 0, buff.capacity());
+        buff = buff2;
         if (PlatformDetection.isWindows()) shma.close();
     }
 
@@ -114,7 +117,10 @@ public final class ShmBuilder
 
         SharedMemoryArray shma = SharedMemoryArray.readOrCreate(memoryName, arrayShape, new IntType(), false, true);
         ByteBuffer buff = shma.getDataBufferNoHeader();
-        tensor.asRawTensor().data().read(buff.array(), 0, buff.capacity());
+        byte[] flat = new byte[buff.capacity()];
+        ByteBuffer buff2 = ByteBuffer.wrap(flat);
+        tensor.asRawTensor().data().read(flat, 0, buff.capacity());
+        buff = buff2;
         if (PlatformDetection.isWindows()) shma.close();
     }
 
@@ -127,7 +133,10 @@ public final class ShmBuilder
 
         SharedMemoryArray shma = SharedMemoryArray.readOrCreate(memoryName, arrayShape, new FloatType(), false, true);
         ByteBuffer buff = shma.getDataBufferNoHeader();
-        tensor.asRawTensor().data().read(buff.array(), 0, buff.capacity());
+        byte[] flat = new byte[buff.capacity()];
+        ByteBuffer buff2 = ByteBuffer.wrap(flat);
+        tensor.asRawTensor().data().read(flat, 0, buff.capacity());
+        buff = buff2;
         if (PlatformDetection.isWindows()) shma.close();
     }
 
@@ -140,7 +149,10 @@ public final class ShmBuilder
 
         SharedMemoryArray shma = SharedMemoryArray.readOrCreate(memoryName, arrayShape, new DoubleType(), false, true);
         ByteBuffer buff = shma.getDataBufferNoHeader();
-        tensor.asRawTensor().data().read(buff.array(), 0, buff.capacity());
+        byte[] flat = new byte[buff.capacity()];
+        ByteBuffer buff2 = ByteBuffer.wrap(flat);
+        tensor.asRawTensor().data().read(flat, 0, buff.capacity());
+        buff = buff2;
         if (PlatformDetection.isWindows()) shma.close();
     }
 
@@ -154,7 +166,10 @@ public final class ShmBuilder
 
         SharedMemoryArray shma = SharedMemoryArray.readOrCreate(memoryName, arrayShape, new LongType(), false, true);
         ByteBuffer buff = shma.getDataBufferNoHeader();
-        tensor.asRawTensor().data().read(buff.array(), 0, buff.capacity());
+        byte[] flat = new byte[buff.capacity()];
+        ByteBuffer buff2 = ByteBuffer.wrap(flat);
+        tensor.asRawTensor().data().read(flat, 0, buff.capacity());
+        buff = buff2;
         if (PlatformDetection.isWindows()) shma.close();
     }
 }
