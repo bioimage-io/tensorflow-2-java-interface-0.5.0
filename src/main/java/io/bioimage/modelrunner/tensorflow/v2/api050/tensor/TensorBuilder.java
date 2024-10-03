@@ -99,7 +99,6 @@ public final class TensorBuilder {
 	 * @throws IllegalArgumentException if the type of the {@link RandomAccessibleInterval}
 	 *  is not supported
 	 */
-	@SuppressWarnings("unchecked")
 	public static < T extends RealType< T > & NativeType< T > > TType build(
 		RandomAccessibleInterval<T> array) throws IllegalArgumentException
 	{
