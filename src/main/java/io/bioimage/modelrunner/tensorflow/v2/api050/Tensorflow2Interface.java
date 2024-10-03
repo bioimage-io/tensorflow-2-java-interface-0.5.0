@@ -350,8 +350,8 @@ public class Tensorflow2Interface implements DeepLearningEngineInterface {
 	void runInterprocessing(List<Tensor<T>> inputTensors, List<Tensor<R>> outputTensors) throws RunModelException {
 		shmaInputList = new ArrayList<SharedMemoryArray>();
 		shmaOutputList = new ArrayList<SharedMemoryArray>();
-		List<String> encIns = modifyForWinCmd(encodeInputs(inputTensors));
-		List<String> encOuts = modifyForWinCmd(encodeOutputs(outputTensors));
+		List<String> encIns = encodeInputs(inputTensors);
+		List<String> encOuts = encodeOutputs(outputTensors);
 		LinkedHashMap<String, Object> args = new LinkedHashMap<String, Object>();
 		args.put("inputs", encIns);
 		args.put("outputs", encOuts);
@@ -398,16 +398,6 @@ public class Tensorflow2Interface implements DeepLearningEngineInterface {
 		});
 		shmaOutputList = null;
 	}
-	
-	private static List<String> modifyForWinCmd(List<String> ins){
-		if (!PlatformDetection.isWindows())
-			return ins;
-		List<String> newIns = new ArrayList<String>();
-		for (String ii : ins)
-			newIns.add("\"" + ii.replace("\"", "\\\"") + "\"");
-		return newIns;
-	}
-	
 	
 	private <T extends RealType<T> & NativeType<T>> List<String> encodeInputs(List<Tensor<T>> inputTensors) {
 		List<String> encodedInputTensors = new ArrayList<String>();
